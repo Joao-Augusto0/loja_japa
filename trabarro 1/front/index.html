@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prod</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="carregarTabela() , filtrarDatas()">
+    <h1>Livro Caixa</h1>
+
+    <hr>
+    <br>
+
+    <div class="teto">
+        <p id="mod">Filtro: <input id="busca" type="date" onchange="filtrarDatas(this.value)"></p>
+        <p>Lançamento <button onclick="showMoadal()"> <img src="https://cdn-icons-png.flaticon.com/512/3303/3303893.png"
+                    alt=""></button></p>
+    </div>
+
+    <div class="modals">
+        <div class="modal">
+
+            <div class="top">
+                <h2>Criar novo lançamento</h2>
+                <button onclick="fecharModal()"><img src="https://cdn-icons-png.flaticon.com/512/1234/1234190.png"
+                        alt=""></button>
+            </div>
+            <hr>
+
+            <p>descrição</p>
+            <input id="desc" type="text">
+            <p>tipo</p>
+            <select id="sel">
+                <option value="D">Saída</option>
+                <option value="C">Entrada</option>
+            </select>
+
+            <p>valor</p>
+            <input id="val" type="number">
+
+            <hr>
+            <button onclick="cadastrar()"> enviar </button>
+
+        </div>
+    </div>
+
+    <hr>
+    <br>
+    <div class="cd">
+        <h4 id="credi">credito</h4>
+        <h4 id="debi">debito</h4>
+    </div>
+
+    <div class="juntin">
+        <div class="tabelas">
+            <table class="credito">
+                <thead>
+                    <tr>
+                        <th>N-lancamento</th>
+                        <th>data</th>
+                        <th>descricao</th>
+                        <th>valor</th>
+                        <th>tipo</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-produtos">
+                    <tr class="linhamodelo model">
+                        <td id="lancamento"></td>
+                        <td id="data"></td>
+                        <td id="descricao"></td>
+                        <td id="valor"></td>
+                        <td id="tipo"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="debito">
+                <thead>
+                    <tr>
+                        <th>N-lancamento</th>
+                        <th>data</th>
+                        <th>descricao</th>
+                        <th>valor</th>
+                        <th>tipo</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-produtosD">
+                    <tr class="linhamodeloD model">
+                        <td id="lancamentoD"></td>
+                        <td id="dataD"></td>
+                        <td id="descricaoD"></td>
+                        <td id="valorD"></td>
+                        <td id="tipoD"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <div class="saldin">
+        <div class="saldo model">
+            <p>Saldo Acumulado:</p>
+            <p id="soma"></p>
+        </div>
+    </div>
+
+
+</body>
+<script src="script.js"></script>
